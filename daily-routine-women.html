@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Daily Routine for Women</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#faf7f5;--surface:#ffffff;--surface2:#fdf9f7;
+  --rose:#b5446e;--rose-l:#fdeef4;--rose-m:#f0a8c4;
+  --plum:#7c4d8a;--plum-l:#f5eef8;
+  --sage:#4a7c6f;--sage-l:#edf5f3;
+  --sky:#3d6b9e;--sky-l:#eaf1f9;
+  --amber:#b06a1e;--amber-l:#fdf3e7;
+  --clay:#9e4a3a;--clay-l:#fdecea;
+  --ink:#1e1e2e;--body:#4a4a5a;--muted:#9090a0;
+  --border:#ede8e3;--gold:#c9a84c;
+  --sh1:0 2px 12px rgba(0,0,0,0.06);
+  --sh2:0 8px 32px rgba(0,0,0,0.10);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--body);padding:36px 20px 72px;min-height:100vh;}
+.page{max-width:840px;margin:auto;}
+
+/* HERO */
+.hero{
+  background:linear-gradient(140deg,#2d1b35 0%,#6b2d5e 50%,#3d2060 100%);
+  border-radius:28px;padding:56px 44px;text-align:center;
+  margin-bottom:28px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 20%,rgba(201,168,76,0.18) 0%,transparent 60%);
+  pointer-events:none;
+}
+.hero-eyebrow{
+  display:inline-block;font-size:0.72rem;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;position:relative;z-index:1;
+}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;font-size:2.8rem;
+  color:#fff;margin-bottom:12px;line-height:1.2;position:relative;z-index:1;
+}
+.hero p{font-size:0.97rem;color:rgba(255,255,255,0.75);max-width:480px;margin:auto;line-height:1.75;position:relative;z-index:1;}
+.hero-tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:20px;position:relative;z-index:1;}
+.hero-tag{
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  color:rgba(255,255,255,0.85);border-radius:30px;
+  padding:5px 15px;font-size:0.76rem;font-weight:500;letter-spacing:0.3px;
+}
+
+/* SECTION LABEL */
+.slabel{
+  font-size:0.68rem;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);
+  margin:32px 0 14px;padding-left:2px;
+  display:flex;align-items:center;gap:10px;
+}
+.slabel::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* CARD */
+.card{
+  background:var(--surface);border-radius:20px;
+  padding:26px 24px;border:1px solid var(--border);
+  box-shadow:var(--sh1);margin-bottom:16px;
+  transition:box-shadow 0.2s;
+}
+.card:hover{box-shadow:var(--sh2);}
+.ch{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1.5px solid var(--border);}
+.ci{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.ch h2{font-size:0.97rem;font-weight:600;letter-spacing:0.1px;}
+.card ul{list-style:none;padding:0;}
+.card ul li{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:8px 0;border-bottom:1px solid var(--border);
+  font-size:0.875rem;line-height:1.65;color:var(--body);
+}
+.card ul li:last-child{border-bottom:none;}
+.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:8px;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+
+/* COLOR VARIANTS */
+.v-rose .ci{background:var(--rose-l);}  .v-rose .ch h2{color:var(--rose);}  .v-rose .ch{border-color:var(--rose-m);}  .v-rose .dot{background:var(--rose);}
+.v-plum .ci{background:var(--plum-l);}  .v-plum .ch h2{color:var(--plum);}  .v-plum .ch{border-color:#d4b0de;}       .v-plum .dot{background:var(--plum);}
+.v-sage .ci{background:var(--sage-l);}  .v-sage .ch h2{color:var(--sage);}  .v-sage .ch{border-color:#9ecfc5;}       .v-sage .dot{background:var(--sage);}
+.v-sky  .ci{background:var(--sky-l);}   .v-sky  .ch h2{color:var(--sky);}   .v-sky  .ch{border-color:#9bbfdf;}       .v-sky  .dot{background:var(--sky);}
+.v-amber.ci{background:var(--amber-l);} .v-amber .ch h2{color:var(--amber);}.v-amber .ch{border-color:#e0b87a;}      .v-amber .dot{background:var(--amber);}
+.v-clay .ci{background:var(--clay-l);}  .v-clay .ch h2{color:var(--clay);}  .v-clay .ch{border-color:#e8a090;}       .v-clay .dot{background:var(--clay);}
+
+/* SCHEDULE */
+.schedule{background:var(--surface);border-radius:20px;padding:26px 24px;border:1px solid var(--border);box-shadow:var(--sh1);margin-bottom:16px;}
+.schedule .ch{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1.5px solid var(--rose-m);}
+.schedule .ch h2{font-size:0.97rem;font-weight:600;color:var(--rose);}
+.srow{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);font-size:0.875rem;line-height:1.6;}
+.srow:last-child{border-bottom:none;}
+.pill{
+  border-radius:8px;padding:4px 11px;font-size:0.72rem;
+  font-weight:600;white-space:nowrap;min-width:90px;
+  text-align:center;flex-shrink:0;margin-top:2px;letter-spacing:0.2px;
+}
+.pill.morning{background:#fdeef4;color:var(--rose);}
+.pill.work   {background:var(--plum-l);color:var(--plum);}
+.pill.brk    {background:var(--sage-l);color:var(--sage);}
+.pill.evening{background:var(--sky-l);color:var(--sky);}
+.pill.sleep  {background:#f0edf5;color:#4a3060;}
+
+/* PRIORITIES */
+.priorities{background:var(--surface);border-radius:20px;padding:26px 24px;border:1px solid var(--border);box-shadow:var(--sh1);margin-bottom:16px;}
+.priorities .ch{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1.5px solid var(--rose-m);}
+.priorities .ch h2{font-size:0.97rem;font-weight:600;color:var(--rose);}
+.p-item{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid var(--border);font-size:0.9rem;}
+.p-item:last-child{border-bottom:none;}
+.p-num{
+  background:linear-gradient(135deg,var(--rose),var(--plum));
+  color:white;border-radius:50%;width:30px;height:30px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.82rem;font-weight:700;flex-shrink:0;
+}
+
+/* HABITS GRID */
+.habits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px;}
+.habit-box{
+  background:var(--surface);border-radius:18px;padding:20px 16px;
+  border:1px solid var(--border);box-shadow:var(--sh1);
+  text-align:center;transition:transform 0.2s,box-shadow 0.2s;
+}
+.habit-box:hover{transform:translateY(-3px);box-shadow:var(--sh2);}
+.habit-box .icon{font-size:1.8rem;margin-bottom:8px;}
+.habit-box .title{font-weight:600;font-size:0.85rem;color:var(--rose);margin-bottom:5px;}
+.habit-box .desc{font-size:0.78rem;color:var(--muted);line-height:1.5;}
+
+/* QUOTE */
+.quote{
+  background:linear-gradient(140deg,#2d1b35,#6b2d5e);
+  border-radius:20px;padding:32px 36px;text-align:center;
+  margin-bottom:16px;position:relative;overflow:hidden;
+}
+.quote::before{
+  content:'\201C';position:absolute;top:-10px;left:20px;
+  font-size:8rem;color:rgba(201,168,76,0.15);
+  font-family:'Cormorant Garamond',serif;line-height:1;
+}
+.quote p{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:#fff;line-height:1.7;font-style:italic;position:relative;z-index:1;}
+.quote span{display:block;margin-top:10px;font-size:0.8rem;color:rgba(255,255,255,0.55);font-style:normal;position:relative;z-index:1;}
+
+/* PRINT BTN */
+.print-btn{
+  width:100%;padding:14px;
+  background:linear-gradient(135deg,var(--rose),var(--plum));
+  color:white;border:none;border-radius:14px;
+  font-size:0.95rem;font-weight:600;cursor:pointer;
+  letter-spacing:0.3px;transition:opacity 0.2s;margin-bottom:36px;
+}
+.print-btn:hover{opacity:0.88;}
+
+/* PAGE BREAK */
+.page-break{
+  page-break-before:always;
+  border-top:2px dashed var(--border);
+  margin:44px 0 32px;text-align:center;position:relative;
+}
+.page-break span{
+  background:var(--bg);padding:4px 18px;
+  border-radius:20px;font-size:0.72rem;color:var(--plum);
+  position:relative;top:-12px;font-weight:600;letter-spacing:1px;
+  border:1px solid var(--border);
+}
+
+/* BACK HERO */
+.back-hero{
+  background:linear-gradient(140deg,#1a2a3a,#2d4a6e,#3d2060);
+  border-radius:28px;padding:40px 36px;text-align:center;margin-bottom:28px;
+}
+.back-hero h1{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:#fff;margin-bottom:8px;}
+.back-hero p{font-size:0.93rem;color:rgba(255,255,255,0.7);}
+
+/* WEEK PLANNER */
+.week-planner{background:var(--surface);border-radius:20px;padding:26px 24px;border:1px solid var(--border);box-shadow:var(--sh1);margin-bottom:16px;}
+.week-planner .ch{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1.5px solid #d4b0de;}
+.week-planner .ch h2{font-size:0.97rem;font-weight:600;color:var(--plum);}
+.week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;}
+.day-col{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.day-head{
+  background:linear-gradient(135deg,var(--rose),var(--plum));
+  color:white;text-align:center;padding:9px 4px;
+  font-size:0.75rem;font-weight:700;
+}
+.day-head span{display:block;font-size:0.65rem;font-weight:400;opacity:0.8;margin-top:2px;}
+.day-body{background:var(--surface2);padding:8px 6px;min-height:110px;}
+.day-task{
+  background:var(--plum-l);border-radius:6px;
+  padding:4px 6px;font-size:0.68rem;color:var(--plum);
+  margin-bottom:4px;line-height:1.4;
+}
+.day-line{border:none;border-bottom:1px dashed var(--border);margin:6px 0;}
+
+/* HABIT TRACKER */
+.habit-tracker{background:var(--surface);border-radius:20px;padding:26px 24px;border:1px solid var(--border);box-shadow:var(--sh1);margin-bottom:16px;}
+.habit-tracker .ch{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1.5px solid #9ecfc5;}
+.habit-tracker .ch h2{font-size:0.97rem;font-weight:600;color:var(--sage);}
+.tracker-table{width:100%;border-collapse:collapse;font-size:0.8rem;}
+.tracker-table th{background:var(--sage-l);color:var(--sage);padding:8px 6px;text-align:center;font-weight:600;border:1px solid #c5e8e2;}
+.tracker-table th.habit-col{text-align:left;min-width:140px;}
+.tracker-table td{border:1px solid var(--border);padding:8px 6px;text-align:center;color:var(--body);}
+.tracker-table td.habit-name{text-align:left;font-weight:500;color:var(--ink);background:var(--surface2);}
+.check-circle{
+  width:20px;height:20px;border-radius:50%;
+  border:2px solid #9ecfc5;display:inline-block;
+  cursor:pointer;transition:all 0.2s;vertical-align:middle;
+}
+.check-circle.done{background:var(--sage);border-color:var(--sage);}
+.check-circle.done::after{content:'✓';color:white;font-size:0.68rem;display:flex;align-items:center;justify-content:center;height:100%;}
+
+/* MEAL PLANNER */
+.meal-planner{background:var(--surface);border-radius:20px;padding:26px 24px;border:1px solid var(--border);box-shadow:var(--sh1);margin-bottom:16px;}
+.meal-planner .ch{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1.5px solid #e0b87a;}
+.meal-planner .ch h2{font-size:0.97rem;font-weight:600;color:var(--amber);}
+.meal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.meal-box{border-radius:14px;overflow:hidden;border:1px solid var(--border);}
+.meal-head{background:linear-gradient(135deg,var(--amber),#d4891e);color:white;text-align:center;padding:9px;font-size:0.78rem;font-weight:600;}
+.meal-body{background:var(--amber-l);padding:10px;min-height:80px;}
+.meal-item{font-size:0.75rem;color:var(--body);padding:4px 0;border-bottom:1px dashed #e8d0a8;line-height:1.45;}
+.meal-item:last-child{border-bottom:none;}
+.meal-item strong{color:var(--amber);display:block;font-size:0.7rem;}
+
+/* JOURNAL */
+.journal{background:var(--surface);border-radius:20px;padding:26px 24px;border:1px solid var(--border);box-shadow:var(--sh1);margin-bottom:16px;}
+.journal .ch{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1.5px solid #9bbfdf;}
+.journal .ch h2{font-size:0.97rem;font-weight:600;color:var(--sky);}
+.journal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.journal-box{background:var(--sky-l);border-radius:12px;padding:16px;border:1px solid #c5d9ef;}
+.journal-box .q{font-weight:600;font-size:0.83rem;color:var(--sky);margin-bottom:10px;}
+.write-line{border:none;border-bottom:1px dashed #9bbfdf;height:24px;display:block;width:100%;margin-bottom:3px;background:transparent;}
+
+/* AFFIRMATIONS */
+.affirmations{background:linear-gradient(135deg,var(--rose-l),var(--plum-l));border-radius:20px;padding:26px 24px;border:1px solid var(--rose-m);box-shadow:var(--sh1);margin-bottom:16px;}
+.affirmations .ch{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1.5px solid var(--rose-m);}
+.affirmations .ch h2{font-size:0.97rem;font-weight:600;color:var(--rose);}
+.aff-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.aff-item{
+  background:white;border-radius:12px;padding:16px;
+  font-size:0.86rem;color:var(--body);line-height:1.6;
+  border-left:3px solid var(--rose);font-style:italic;
+  box-shadow:var(--sh1);
+}
+
+/* GOALS */
+.goals-section{background:var(--surface);border-radius:20px;padding:26px 24px;border:1px solid var(--border);box-shadow:var(--sh1);margin-bottom:16px;}
+.goals-section .ch{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1.5px solid #9ecfc5;}
+.goals-section .ch h2{font-size:0.97rem;font-weight:600;color:var(--sage);}
+.goal-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:0.88rem;}
+.goal-row:last-child{border-bottom:none;}
+.goal-icon{font-size:1.1rem;flex-shrink:0;}
+.goal-label{min-width:90px;font-size:0.78rem;color:var(--muted);font-weight:500;}
+.goal-line{flex:1;border:none;border-bottom:1.5px dashed #9ecfc5;height:22px;background:transparent;}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .grid-2{grid-template-columns:1fr;}
+  .habits-grid{grid-template-columns:1fr 1fr;}
+  .week-grid{grid-template-columns:repeat(4,1fr);}
+  .meal-grid{grid-template-columns:1fr 1fr;}
+  .journal-grid{grid-template-columns:1fr;}
+  .aff-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:2rem;}
+  .hero{padding:36px 24px;}
+}
+@media print{
+  body{background:white;padding:0;}
+  .print-btn{display:none;}
+  .page-break{border-top:1px dashed #ccc;}
+  .card:hover,.habit-box:hover{box-shadow:none;transform:none;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">✦ Your Daily Guide ✦</div>
+  <h1>🌸 Daily Routine for Women</h1>
+  <p>Simple, balanced, and sustainable — designed to keep you productive, healthy, and stress-free every single day.</p>
+  <div class="hero-tags">
+    <span class="hero-tag">🌅 Morning Ritual</span>
+    <span class="hero-tag">💼 Deep Work</span>
+    <span class="hero-tag">🥗 Healthy Habits</span>
+    <span class="hero-tag">🌙 Evening Wind-Down</span>
+    <span class="hero-tag">🧘 Self-Care</span>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<div class="slabel">🗓️ Time-Blocked Daily Schedule</div>
+<div class="schedule">
+  <div class="ch"><div class="ci" style="background:var(--rose-l)">🗓️</div><h2>Full Day at a Glance</h2></div>
+  <div class="srow"><span class="pill morning">6:00 AM</span><span>Wake up — drink a full glass of water before anything else</span></div>
+  <div class="srow"><span class="pill morning">6:10 AM</span><span>Skincare, freshen up, 5 min gratitude or deep breathing</span></div>
+  <div class="srow"><span class="pill morning">6:30 AM</span><span>Exercise — 20–30 min walk, yoga, or workout of choice</span></div>
+  <div class="srow"><span class="pill morning">7:00 AM</span><span>Shower, get dressed, eat a nourishing breakfast</span></div>
+  <div class="srow"><span class="pill morning">7:30 AM</span><span>Plan your day — write your top 3 tasks, set your intention</span></div>
+  <div class="srow"><span class="pill morning">8:00 AM</span><span>Transition time — commute, home prep, or quiet reading</span></div>
+  <div class="srow"><span class="pill work">9:00 AM</span><span>Deep Work Block 1 — tackle your most important task first</span></div>
+  <div class="srow"><span class="pill brk">10:30 AM</span><span>Break — stretch, hydrate, step outside for 5 min</span></div>
+  <div class="srow"><span class="pill work">10:45 AM</span><span>Deep Work Block 2 — second priority task or meetings</span></div>
+  <div class="srow"><span class="pill brk">12:30 PM</span><span>Lunch — eat away from your screen, rest fully</span></div>
+  <div class="srow"><span class="pill work">1:15 PM</span><span>Lighter tasks — emails, calls, admin, errands</span></div>
+  <div class="srow"><span class="pill brk">3:00 PM</span><span>Afternoon break — snack, short walk, reset your focus</span></div>
+  <div class="srow"><span class="pill work">3:15 PM</span><span>Wrap up work — review progress, prep tomorrow's tasks</span></div>
+  <div class="srow"><span class="pill evening">5:00 PM</span><span>Transition — change clothes, leave work mode behind</span></div>
+  <div class="srow"><span class="pill evening">5:30 PM</span><span>Personal time — hobby, reading, learning, or exercise</span></div>
+  <div class="srow"><span class="pill evening">6:30 PM</span><span>Dinner — sit down, eat slowly, enjoy it</span></div>
+  <div class="srow"><span class="pill evening">7:30 PM</span><span>Family, social, or quiet alone time</span></div>
+  <div class="srow"><span class="pill evening">8:30 PM</span><span>Wind down — journal, light stretch, skincare routine</span></div>
+  <div class="srow"><span class="pill evening">9:30 PM</span><span>No screens — dim lights, read or meditate</span></div>
+  <div class="srow"><span class="pill sleep">10:00 PM</span><span>Sleep — 7–8 hours is the foundation of everything</span></div>
+</div>
+
+<!-- MORNING + EVENING -->
+<div class="slabel">🌅 Morning & Evening Rituals</div>
+<div class="grid-2">
+  <div class="card v-rose">
+    <div class="ch"><div class="ci">🌅</div><h2>Morning Routine</h2></div>
+    <ul>
+      <li><span class="dot"></span>Wake up at the same time every day — consistency is key</li>
+      <li><span class="dot"></span>Drink water immediately — rehydrates your body and brain</li>
+      <li><span class="dot"></span>No phone for the first 30 minutes — protect your mindset</li>
+      <li><span class="dot"></span>Move your body — even 10 minutes changes your energy</li>
+      <li><span class="dot"></span>Eat a real breakfast — fuel your focus, not just caffeine</li>
+      <li><span class="dot"></span>Write your top 3 tasks — clarity before the chaos starts</li>
+    </ul>
+  </div>
+  <div class="card v-sky">
+    <div class="ch"><div class="ci">🌙</div><h2>Evening Routine</h2></div>
+    <ul>
+      <li><span class="dot"></span>Stop work at a fixed time — your brain needs a clear off switch</li>
+      <li><span class="dot"></span>Write 3 wins from today — rewires your brain toward progress</li>
+      <li><span class="dot"></span>Prepare for tomorrow — clothes, meals, task list ready</li>
+      <li><span class="dot"></span>Journal 5 minutes — release the mental load before sleep</li>
+      <li><span class="dot"></span>Skincare routine — a small act of self-care that signals rest</li>
+      <li><span class="dot"></span>Screens off 30 min before bed — your sleep quality depends on it</li>
+    </ul>
+  </div>
+</div>
+
+<!-- WORK + HOME -->
+<div class="slabel">💼 Work, Study & Home</div>
+<div class="grid-2">
+  <div class="card v-plum">
+    <div class="ch"><div class="ci">💼</div><h2>Work & Study</h2></div>
+    <ul>
+      <li><span class="dot"></span>Hardest task first — use peak morning energy wisely</li>
+      <li><span class="dot"></span>90-min deep work blocks — your brain's natural focus cycle</li>
+      <li><span class="dot"></span>One task at a time — multitasking reduces quality by 40%</li>
+      <li><span class="dot"></span>Phone away during focus blocks — notifications kill flow</li>
+      <li><span class="dot"></span>Batch emails — check only twice a day, not constantly</li>
+      <li><span class="dot"></span>End with a clear desk and tomorrow's top 3 written down</li>
+    </ul>
+  </div>
+  <div class="card v-sage">
+    <div class="ch"><div class="ci">🏠</div><h2>Home Management</h2></div>
+    <ul>
+      <li><span class="dot"></span>10-min morning tidy — prevents overwhelm building up</li>
+      <li><span class="dot"></span>One cleaning task per day — not everything at once</li>
+      <li><span class="dot"></span>Meal prep on Sunday — saves 30+ min every weekday</li>
+      <li><span class="dot"></span>Batch errands on one day — reduces mental switching</li>
+      <li><span class="dot"></span>15-min evening reset — quick tidy before winding down</li>
+      <li><span class="dot"></span>Delegate where possible — you don't have to do it all</li>
+    </ul>
+  </div>
+</div>
+
+<!-- HEALTH + STRESS -->
+<div class="slabel">🥗 Health & Well-being</div>
+<div class="grid-2">
+  <div class="card v-sage">
+    <div class="ch"><div class="ci">🥗</div><h2>Health & Energy</h2></div>
+    <ul>
+      <li><span class="dot"></span>8+ glasses of water daily — keep a bottle always visible</li>
+      <li><span class="dot"></span>3 balanced meals — protein, vegetables, whole grains</li>
+      <li><span class="dot"></span>30 min movement daily — walk, dance, yoga, gym</li>
+      <li><span class="dot"></span>Limit caffeine after 2 PM — protects your sleep quality</li>
+      <li><span class="dot"></span>Snack smart — fruit, nuts, yogurt over processed food</li>
+      <li><span class="dot"></span>7–8 hours sleep — your most powerful productivity tool</li>
+    </ul>
+  </div>
+  <div class="card v-clay">
+    <div class="ch"><div class="ci">🧘</div><h2>Stress & Well-being</h2></div>
+    <ul>
+      <li><span class="dot"></span>3 deep breaths before reacting to anything stressful</li>
+      <li><span class="dot"></span>One "no obligation" hour daily — protect it fiercely</li>
+      <li><span class="dot"></span>Say no to what doesn't serve your top priorities</li>
+      <li><span class="dot"></span>10-min outdoor walk — resets cortisol and clears your head</li>
+      <li><span class="dot"></span>Brain dump before bed — write it out, then close the book</li>
+      <li><span class="dot"></span>Rest is productive — it refuels everything else you do</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PRIORITIES -->
+<div class="slabel">✅ Daily Priorities</div>
+<div class="priorities">
+  <div class="ch"><div class="ci" style="background:var(--rose-l)">✅</div><h2>Top 3 Daily Priorities</h2></div>
+  <div class="p-item"><span class="p-num">1</span><span>Your most important work or study task — do this before anything else</span></div>
+  <div class="p-item"><span class="p-num">2</span><span>One self-care action — movement, rest, or something just for you</span></div>
+  <div class="p-item"><span class="p-num">3</span><span>One home or personal responsibility — keep life running smoothly</span></div>
+  <p style="font-size:0.8rem;color:var(--muted);margin-top:14px;">Everything else is a bonus. If you hit these 3, the day is a success.</p>
+</div>
+
+<!-- HABITS -->
+<div class="slabel">🌱 Small Daily Habits</div>
+<div class="habits-grid">
+  <div class="habit-box"><div class="icon">💧</div><div class="title">Hydrate First</div><div class="desc">Water before coffee — every single morning</div></div>
+  <div class="habit-box"><div class="icon">📝</div><div class="title">Plan the Night Before</div><div class="desc">Write tomorrow's top 3 tasks before you sleep</div></div>
+  <div class="habit-box"><div class="icon">📵</div><div class="title">Phone-Free Morning</div><div class="desc">No scrolling for the first 30 minutes after waking</div></div>
+  <div class="habit-box"><div class="icon">🚶</div><div class="title">Daily Walk</div><div class="desc">Even 10 minutes outside resets your mood and energy</div></div>
+  <div class="habit-box"><div class="icon">📓</div><div class="title">3 Wins Daily</div><div class="desc">Write 3 things you did well — no matter how small</div></div>
+  <div class="habit-box"><div class="icon">🌙</div><div class="title">Fixed Sleep Time</div><div class="desc">Same bedtime every night — consistency beats duration</div></div>
+</div>
+
+<!-- QUOTE -->
+<div class="quote">
+  <p>"You don't need a perfect routine — you need a sustainable one."</p>
+  <span>Start with 2 habits. Build from there. Progress over perfection, always.</span>
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<!-- ══════════════ BACK SIDE ══════════════ -->
+<div class="page-break"><span>✦ BACK SIDE ✦</span></div>
+
+<div class="back-hero">
+  <h1>🗒️ Weekly Planner & Tracker</h1>
+  <p>Plan your week, track your habits, reflect on your growth — all in one place.</p>
+</div>
+
+<!-- WEEKLY PLANNER -->
+<div class="slabel">📅 Weekly Focus Planner</div>
+<div class="week-planner">
+  <div class="ch"><div class="ci" style="background:var(--plum-l)">📅</div><h2>Weekly Focus Planner</h2></div>
+  <div class="week-grid">
+    <div class="day-col"><div class="day-head">MON<span>Plan</span></div><div class="day-body"><div class="day-task">📋 Weekly goals</div><div class="day-task">🧺 Laundry</div><hr class="day-line"/><hr class="day-line"/><hr class="day-line"/></div></div>
+    <div class="day-col"><div class="day-head">TUE<span>Deep Work</span></div><div class="day-body"><div class="day-task">💼 Hard task first</div><div class="day-task">🛒 Groceries</div><hr class="day-line"/><hr class="day-line"/><hr class="day-line"/></div></div>
+    <div class="day-col"><div class="day-head">WED<span>Errands</span></div><div class="day-body"><div class="day-task">🏃 Batch errands</div><div class="day-task">🧹 Floors</div><hr class="day-line"/><hr class="day-line"/><hr class="day-line"/></div></div>
+    <div class="day-col"><div class="day-head">THU<span>Deep Work</span></div><div class="day-body"><div class="day-task">🎯 Focus project</div><div class="day-task">🍳 Kitchen</div><hr class="day-line"/><hr class="day-line"/><hr class="day-line"/></div></div>
+    <div class="day-col"><div class="day-head">FRI<span>Review</span></div><div class="day-body"><div class="day-task">✅ Weekly review</div><div class="day-task">📝 Plan next week</div><hr class="day-line"/><hr class="day-line"/><hr class="day-line"/></div></div>
+    <div class="day-col"><div class="day-head">SAT<span>Rest & Joy</span></div><div class="day-body"><div class="day-task">🌸 Hobby / fun</div><div class="day-task">👯 Social time</div><hr class="day-line"/><hr class="day-line"/><hr class="day-line"/></div></div>
+    <div class="day-col"><div class="day-head">SUN<span>Reset</span></div><div class="day-body"><div class="day-task">🍱 Meal prep</div><div class="day-task">🧘 Recharge</div><hr class="day-line"/><hr class="day-line"/><hr class="day-line"/></div></div>
+  </div>
+</div>
+
+<!-- HABIT TRACKER -->
+<div class="slabel">✅ Weekly Habit Tracker</div>
+<div class="habit-tracker">
+  <div class="ch"><div class="ci" style="background:var(--sage-l)">✅</div><h2>Weekly Habit Tracker</h2></div>
+  <table class="tracker-table">
+    <thead><tr><th class="habit-col">Habit</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th><th>Score</th></tr></thead>
+    <tbody>
+      <tr><td class="habit-name">💧 Drink 8 glasses water</td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td class="score">0/7</td></tr>
+      <tr><td class="habit-name">🚶 30 min movement</td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td class="score">0/7</td></tr>
+      <tr><td class="habit-name">📵 No phone 30 min AM</td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td class="score">0/7</td></tr>
+      <tr><td class="habit-name">📝 Plan top 3 tasks</td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td class="score">0/7</td></tr>
+      <tr><td class="habit-name">📓 Journal / 3 wins</td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td class="score">0/7</td></tr>
+      <tr><td class="habit-name">🌙 Sleep by 10:30 PM</td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td class="score">0/7</td></tr>
+      <tr><td class="habit-name">🧘 5 min mindfulness</td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td><span class="check-circle" onclick="toggle(this)"></span></td><td class="score">0/7</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- MEAL PLANNER -->
+<div class="slabel">🥗 Weekly Meal Planner</div>
+<div class="meal-planner">
+  <div class="ch"><div class="ci" style="background:var(--amber-l)">🥗</div><h2>Weekly Meal Planner</h2></div>
+  <div class="meal-grid">
+    <div class="meal-box"><div class="meal-head">🌅 Breakfast</div><div class="meal-body"><div class="meal-item"><strong>Mon–Wed</strong>Oats + fruit + nuts</div><div class="meal-item"><strong>Thu–Fri</strong>Eggs + whole grain toast</div><div class="meal-item"><strong>Weekend</strong>Smoothie bowl or pancakes</div></div></div>
+    <div class="meal-box"><div class="meal-head">☀️ Lunch</div><div class="meal-body"><div class="meal-item"><strong>Mon–Wed</strong>Salad + protein + grains</div><div class="meal-item"><strong>Thu–Fri</strong>Soup + whole grain bread</div><div class="meal-item"><strong>Weekend</strong>Leftovers or light wrap</div></div></div>
+    <div class="meal-box"><div class="meal-head">🌙 Dinner</div><div class="meal-body"><div class="meal-item"><strong>Mon–Wed</strong>Grilled protein + veggies</div><div class="meal-item"><strong>Thu–Fri</strong>Stir fry or pasta + salad</div><div class="meal-item"><strong>Weekend</strong>Family meal or treat meal</div></div></div>
+    <div class="meal-box"><div class="meal-head">🍎 Snacks</div><div class="meal-body"><div class="meal-item"><strong>Morning</strong>Fruit or yogurt</div><div class="meal-item"><strong>Afternoon</strong>Nuts or hummus + veggies</div><div class="meal-item"><strong>Evening</strong>Herbal tea + dark chocolate</div></div></div>
+  </div>
+</div>
+
+<!-- JOURNAL -->
+<div class="slabel">📓 Daily Reflection Journal</div>
+<div class="journal">
+  <div class="ch"><div class="ci" style="background:var(--sky-l)">📓</div><h2>Daily Reflection Journal</h2></div>
+  <div class="journal-grid">
+    <div class="journal-box"><div class="q">🌟 3 Things I'm Grateful For Today</div><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
+    <div class="journal-box"><div class="q">✅ 3 Wins I Had Today</div><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
+    <div class="journal-box"><div class="q">💭 How Did I Feel Today?</div><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
+    <div class="journal-box"><div class="q">🎯 Tomorrow I Will Focus On</div><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
+    <div class="journal-box"><div class="q">🌱 One Thing I Want to Improve</div><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
+    <div class="journal-box"><div class="q">💌 A Kind Word to Myself Today</div><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></div>
+  </div>
+</div>
+
+<!-- GOALS -->
+<div class="slabel">🎯 Weekly Goals</div>
+<div class="goals-section">
+  <div class="ch"><div class="ci" style="background:var(--sage-l)">🎯</div><h2>My Goals This Week</h2></div>
+  <div class="goal-row"><span class="goal-icon">💼</span><span class="goal-label">Work/Study:</span><div class="goal-line"></div></div>
+  <div class="goal-row"><span class="goal-icon">🏠</span><span class="goal-label">Home:</span><div class="goal-line"></div></div>
+  <div class="goal-row"><span class="goal-icon">💆</span><span class="goal-label">Self-Care:</span><div class="goal-line"></div></div>
+  <div class="goal-row"><span class="goal-icon">🌱</span><span class="goal-label">Personal:</span><div class="goal-line"></div></div>
+  <div class="goal-row"><span class="goal-icon">❤️</span><span class="goal-label">Relationship:</span><div class="goal-line"></div></div>
+</div>
+
+<!-- AFFIRMATIONS -->
+<div class="slabel">💗 Daily Affirmations</div>
+<div class="affirmations">
+  <div class="ch"><div class="ci" style="background:white">💗</div><h2>Daily Affirmations</h2></div>
+  <div class="aff-grid">
+    <div class="aff-item">"I am capable of handling everything that comes my way."</div>
+    <div class="aff-item">"I choose to focus on what I can control and release the rest."</div>
+    <div class="aff-item">"I deserve rest, joy, and time for myself — without guilt."</div>
+    <div class="aff-item">"Every small step I take is moving me forward."</div>
+    <div class="aff-item">"I am enough, exactly as I am, right now."</div>
+    <div class="aff-item">"I take care of myself so I can show up fully for my life."</div>
+  </div>
+</div>
+
+<div class="quote">
+  <p>"A woman who takes care of herself has the energy to take care of everything else."</p>
+  <span>You are not behind. You are exactly where you need to be. Keep going. 🌸</span>
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨️ Print Both Sides as PDF</button>
+
+<script>
+function toggle(el){
+  el.classList.toggle('done');
+  const row=el.closest('tr');
+  const done=row.querySelectorAll('.check-circle.done').length;
+  row.querySelector('.score').textContent=done+'/7';
+}
+</script>
+
+</div>
+</body>
+</html>
+""

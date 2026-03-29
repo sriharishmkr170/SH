@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productivity Coach</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      padding: 30px 20px;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    h1 { font-size: 1.8rem; color: #2d6a4f; margin-bottom: 6px; }
+    p.subtitle { color: #666; margin-bottom: 24px; font-size: 0.95rem; }
+    label { display: block; font-weight: 600; margin-bottom: 6px; margin-top: 16px; }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    input:focus, textarea:focus, select:focus { border-color: #2d6a4f; }
+    textarea { resize: vertical; min-height: 70px; }
+    button {
+      margin-top: 24px;
+      width: 100%;
+      padding: 12px;
+      background: #2d6a4f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #1b4332; }
+    #output { margin-top: 30px; display: none; }
+    .section {
+      background: #f6fff8;
+      border-left: 4px solid #2d6a4f;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .section h3 { color: #2d6a4f; margin-bottom: 10px; font-size: 1rem; }
+    .section ul { padding-left: 18px; }
+    .section ul li { margin-bottom: 6px; font-size: 0.93rem; line-height: 1.5; }
+    .tasks span {
+      display: inline-block;
+      background: #2d6a4f;
+      color: white;
+      border-radius: 50%;
+      width: 22px; height: 22px;
+      text-align: center;
+      line-height: 22px;
+      font-size: 0.8rem;
+      margin-right: 8px;
+    }
+    .task-item { display: flex; align-items: center; margin-bottom: 8px; font-size: 0.93rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌿 Productivity Coach</h1>
+    <p class="subtitle">Fill in your details and get a personalized daily routine.</p>
+
+    <label for="goals">Your Goals</label>
+    <textarea id="goals" placeholder="e.g., finish my Java project, study for exams, launch a side business"></textarea>
+
+    <label for="startTime">Work/Study Start Time</label>
+    <input type="time" id="startTime" value="09:00" />
+
+    <label for="endTime">Work/Study End Time</label>
+    <input type="time" id="endTime" value="17:00" />
+
+    <label for="distractions">Main Distractions</label>
+    <input type="text" id="distractions" placeholder="e.g., phone, social media, TV" />
+
+    <button onclick="generateRoutine()">Generate My Daily Routine</button>
+
+    <div id="output"></div>
+  </div>
+
+  <script src="coach.js"></script>
+</body>
+</html>
